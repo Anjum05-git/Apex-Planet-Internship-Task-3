@@ -1,0 +1,190 @@
+/* To-Do List specific styles */
+
+.todo-container {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.todo-header {
+  padding: var(--space-4);
+  background-color: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.todo-title {
+  margin: 0;
+  color: var(--color-gray-800);
+  font-size: var(--font-size-lg);
+}
+
+.todo-filters {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.todo-form {
+  display: flex;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.todo-input {
+  flex: 1;
+  padding: var(--space-3);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.todo-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: all var(--transition-normal);
+  animation: slideInUp 0.3s ease-out;
+  background-color: var(--color-white);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background-color: var(--color-gray-50);
+}
+
+.todo-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-gray-400);
+  border-radius: var(--radius-md);
+  margin-right: var(--space-3);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.todo-checkbox:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.todo-checkbox:checked::after {
+  content: "✓";
+  color: var(--color-white);
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo-text {
+  flex: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-800);
+  transition: all var(--transition-fast);
+}
+
+.todo-completed .todo-text {
+  text-decoration: line-through;
+  color: var(--color-gray-400);
+}
+
+.todo-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.todo-delete {
+  background: none;
+  border: none;
+  color: var(--color-gray-400);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-base);
+}
+
+.todo-delete:hover {
+  color: var(--color-error);
+  background-color: var(--color-error-light);
+  transform: scale(1.1);
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+#todoCount {
+  font-weight: var(--font-weight-medium);
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.todo-item.removing {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+/* Drag and drop styles */
+.todo-item.dragging {
+  opacity: 0.5;
+  background-color: var(--color-gray-100);
+}
+
+.todo-item.drag-over {
+  border-top: 2px solid var(--color-primary);
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .todo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .todo-filters {
+    margin-top: var(--space-2);
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .todo-item {
+    padding: var(--space-2) var(--space-3);
+  }
+}

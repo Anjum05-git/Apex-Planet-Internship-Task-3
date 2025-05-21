@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Skills Project</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/utilities.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/todo.css">
+  <link rel="stylesheet" href="/css/quiz.css">
+  <link rel="stylesheet" href="/css/carousel.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">WebSkills</h1>
+        <nav class="nav">
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-list" id="navList">
+            <li class="nav-item"><a href="#carousel" class="nav-link">Carousel</a></li>
+            <li class="nav-item"><a href="#quiz" class="nav-link">Quiz</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact Form</a></li>
+            <li class="nav-item"><a href="#todo" class="nav-link">To-Do List</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="hero-title">Enhance Your Web Development Skills</h2>
+          <p class="hero-text">Practice HTML, CSS, and JavaScript with interactive components</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="carousel">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Web Development Topics</h2>
+          <p class="section-description">Explore different aspects of modern web development</p>
+        </div>
+        
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg" alt="HTML5" class="carousel-image">
+                <div class="carousel-content">
+                  <h3 class="carousel-title">HTML5</h3>
+                  <p class="carousel-description">The foundation of web development</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg" alt="CSS3" class="carousel-image">
+                <div class="carousel-content">
+                  <h3 class="carousel-title">CSS3</h3>
+                  <p class="carousel-description">Style and layout for modern websites</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" alt="JavaScript" class="carousel-image">
+                <div class="carousel-content">
+                  <h3 class="carousel-title">JavaScript</h3>
+                  <p class="carousel-description">Dynamic and interactive web applications</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="carousel-nav">
+              <button class="carousel-button prev" aria-label="Previous slide">←</button>
+              <button class="carousel-button next" aria-label="Next slide">→</button>
+            </div>
+            
+            <div class="carousel-dots">
+              <button class="carousel-dot active" aria-label="Go to slide 1"></button>
+              <button class="carousel-dot" aria-label="Go to slide 2"></button>
+              <button class="carousel-dot" aria-label="Go to slide 3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Interactive Quiz</h2>
+          <p class="section-description">Test your knowledge with questions from various categories</p>
+        </div>
+        
+        <div class="quiz-container" id="quiz">
+          <div class="quiz-loading">
+            <p>Loading quiz questions...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact Form</h2>
+          <p class="section-description">Practice HTML forms and CSS styling with validation</p>
+        </div>
+        
+        <div class="grid-layout">
+          <div class="form-container">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+                <div class="error-message" id="name-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+                <div class="error-message" id="email-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-control" required>
+                <div class="error-message" id="subject-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                <div class="error-message" id="message-error"></div>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
+            
+            <div id="formSuccess" class="success-message hidden">
+              <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h3>Thank You!</h3>
+                <p>Your message has been sent successfully.</p>
+                <button id="newFormBtn" class="btn btn-secondary">Send Another Message</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h3>Form Features</h3>
+            <ul>
+              <li>Semantic HTML structure</li>
+              <li>Responsive CSS layout</li>
+              <li>Client-side validation</li>
+              <li>Interactive feedback</li>
+              <li>Accessibility considerations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="todo">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">To-Do List</h2>
+          <p class="section-description">Practice JavaScript DOM manipulation and event handling</p>
+        </div>
+        
+        <div class="grid-layout">
+          <div class="todo-container">
+            <div class="todo-header">
+              <h3 class="todo-title">My Tasks</h3>
+              <div class="todo-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+              </div>
+            </div>
+            
+            <form id="todoForm" class="todo-form">
+              <input type="text" id="todoInput" class="todo-input" placeholder="Add a new task..." required>
+              <button type="submit" class="btn btn-add">Add</button>
+            </form>
+            
+            <ul id="todoList" class="todo-list"></ul>
+            
+            <div class="todo-footer">
+              <span id="todoCount">0 items left</span>
+              <button id="clearCompleted" class="btn btn-text">Clear completed</button>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h3>To-Do List Features</h3>
+            <ul>
+              <li>Add, complete, and delete tasks</li>
+              <li>Filter tasks by status</li>
+              <li>Local storage persistence</li>
+              <li>Animated transitions</li>
+              <li>Drag and drop functionality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 WebSkills Project. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

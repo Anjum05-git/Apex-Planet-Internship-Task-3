@@ -1,0 +1,200 @@
+/* Component specific styles */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  border: 2px solid transparent;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover:not(:disabled),
+.btn-secondary:focus:not(:disabled) {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-accent:hover:not(:disabled),
+.btn-accent:focus:not(:disabled) {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover:not(:disabled),
+.btn-outline:focus:not(:disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.btn-text {
+  background: none;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.btn-text:hover:not(:disabled),
+.btn-text:focus:not(:disabled) {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.btn-icon {
+  padding: var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.btn-add {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.btn-add:hover:not(:disabled),
+.btn-add:focus:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+/* Cards */
+.info-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-gray-200);
+  padding-bottom: var(--space-2);
+}
+
+.info-card ul {
+  list-style: disc inside;
+  color: var(--color-gray-700);
+}
+
+.info-card li {
+  margin-bottom: var(--space-2);
+  position: relative;
+  padding-left: var(--space-2);
+}
+
+.info-card li:before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Success Message */
+.success-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  z-index: 10;
+  border-radius: var(--radius-lg);
+}
+
+.success-message.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.success-content {
+  text-align: center;
+  padding: var(--space-6);
+  max-width: 400px;
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-success-light);
+  color: var(--color-white);
+  font-size: 2rem;
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-4);
+}
+
+/* Filter Buttons */
+.filter-btn {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-gray-600);
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+}
+
+.filter-btn:hover {
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
